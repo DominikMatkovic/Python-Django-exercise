@@ -1,0 +1,23 @@
+
+https://github.com/DominikMatkovic
+
+1. Prvo napraviti basic django html stranici
+koristi se ovaj tutorial 
+"https://docs.djangoproject.com/en/3.2/intro/tutorial01/"
+gotovo
+
+2. Python Django i baza podataka 
+https://docs.djangoproject.com/en/3.2/intro/tutorial02/
+in progress -- done?
+
+3. Python Django i baza podataka 
+https://docs.djangoproject.com/en/3.2/intro/tutorial03/
+
+
+
+
+
+
+
+
+
