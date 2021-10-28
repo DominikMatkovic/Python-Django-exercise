@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class EquipmentConfig(AppConfig):
+class EqviewConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Equipment'
+    name = 'eqview'

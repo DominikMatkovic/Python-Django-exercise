@@ -1,0 +1,9 @@
+{% if person_list %}
+    <ul>
+    {% for person in person_list %}
+        <li><a href="/polls/{{ person.id }}/">{{ person.OIB }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

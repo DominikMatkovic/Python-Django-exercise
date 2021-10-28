@@ -1,4 +1,4 @@
-"""EquipmentDB URL Configuration
+"""mysite2 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('Equipment/', include('Equipment.urls')),
+    path('', include('eqview.urls')),
+    path('eqview/', include('eqview.urls')),
     path('admin/', admin.site.urls),
 ]
