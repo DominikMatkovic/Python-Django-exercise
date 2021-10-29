@@ -1,25 +1,35 @@
 
 https://github.com/DominikMatkovic
 
-1. Prvo napraviti basic django html stranici
+1. Prvo pravim basic django html stranicu
 koristi se ovaj tutorial 
 "https://docs.djangoproject.com/en/3.2/intro/tutorial01/"
 
 2. Python Django i baza podataka 
-https://docs.djangoproject.com/en/3.2/intro/tutorial02/
-
-3. Python Django i baza podataka 
+https://docs.djangoproject.com/en/3.2/intro/tutorial02/ 
 https://docs.djangoproject.com/en/3.2/intro/tutorial03/
 dodan git, i napravljen prvi commit
 
-4. Forme
+3. Forme
 https://docs.djangoproject.com/en/3.2/intro/tutorial04/
 
-5. css
+4. css
 https://docs.djangoproject.com/en/3.2/intro/tutorial06/
 
-6.  pravljenje baze s korisnicima i opremom.
+5. Pravljenje baze s korisnicima i opremom.
 
+https://www.w3schools.com/html/ za html
+
+http://www.learningaboutelectronics.com/Articles/How-to-insert-data-into-a-database-from-an-HTML-form-in-Django.php
+jednostavni form
+
+Omoguceno dodavanje korisnika i opreme.
+opremi se pri dodavanju moze pridrizuti osoba. (29.10.2021.)
+
+Sada cu dodati brisanje osoba ili opreme 
+te promjenjivanje osoba i opreme
+
+Mislim da bi 5. korak trebao biti gotov do 5.11.2021.
 
 
 

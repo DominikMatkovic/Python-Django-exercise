@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Add Equipment </title>
+</head>
+{{people_list}}
+<body>
+<h1> Add Equipment </h1>
+<form action="" method="POST">
+{% csrf_token %}
+Serial number: <input type="text" maxlength="20" name="serialNum"/>
+<br>
+<br>
+<label for="OIB">Choose a person by OIB:</label>
+  <select name="OIB" id="OIB">
+    <option value= "None"> Nobody </option>   
+    {% for person in people_list %}
+        <option value= "{{person.OIB}}"> {{person.OIB}} </option>   
+    {% endfor %}
+  </select>
+<br>
+<br>
+<input onclick="myFunction()" type="submit" value="Add"/>
+</form>
+
+
+<br>
+<br>
+<a href="../../eqview">Go back.</a>
+
+
+
+
+
+<script>
+function myFunction() {
+  alert("Added!");
+}
+</script>
+
+
+
+</body>
+
+</html>

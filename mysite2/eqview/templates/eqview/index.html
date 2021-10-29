@@ -1,9 +1,37 @@
-{% if person_list %}
-    <ul>
-    {% for person in person_list %}
-        <li><a href="/polls/{{ person.id }}/">{{ person.OIB }}</a></li>
+<h1>List of all company equipment and employees</h1>
+
+{{ eq_list}}
+
+{% if eq_list %}
+    <table>
+    {% for equipment in eq_list %}
+        <tr>
+            <th><a href="/eqview/{{ equipment.id }}/">ID: {{ equipment.id }} , {{equipment.serialNum}}</a><th>
+            <th><a href="">DELETE</a></th>
+        </tr>
     {% endfor %}
-    </ul>
+    </table>
 {% else %}
-    <p>No polls are available.</p>
+    <p>We have no equipment.</p>
 {% endif %}
+
+{{ people_list}}
+
+{% if people_list %}
+    <table>
+    {% for person in people_list %}
+        <tr> 
+            <th><a href="/eqview/people/{{ person.id }}/">ID: {{ person.id }} , {{person.OIB}}</a></th>
+            <th><a href="">DELETE</a></th>
+        </tr>      
+    {% endfor %}
+    </table>
+{% else %}
+    <p>We have no employees.</p>
+{% endif %}
+
+
+<a href="/eqview/addPersonForm">Add person.</a>
+<br>
+<a href="/eqview/addEquipmentForm">Add equipment.</a>
+

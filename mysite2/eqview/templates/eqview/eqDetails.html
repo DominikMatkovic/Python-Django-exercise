@@ -1,0 +1,17 @@
+
+
+ID: {{EquipmentById.id}} 
+<br>
+Serial number: {{EquipmentById.serialNum}}
+<br>
+{% if EquipmentById.borrowedBy == null %}
+
+Nobody
+
+{% else %}
+
+<!-- Borrowed by: <a href="/eqview/people/{{ EquipmentById.borrowedBy }}/">{{EquipmentById.borrowedBy}} </a>
+-->
+Borrowed by: {{EquipmentById.borrowedBy}}
+
+{% endif %}

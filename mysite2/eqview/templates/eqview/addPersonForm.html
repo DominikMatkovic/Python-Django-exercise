@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Add Person </title>
+</head>
+
+<body>
+<h1> Add Person </h1>
+<form action="" method="POST">
+{% csrf_token %}
+OIB: <input type="text" maxlength="11" name="OIB"/>
+<br>
+<br>
+<input onclick="myFunction()" type="submit" value="Add"/>
+
+</form>
+
+<br>
+<br>
+<a href="../../eqview">Go back.</a>
+
+
+
+
+
+<script>
+function myFunction() {
+  alert("Added!");
+}
+</script>
+
+
+
+</body>
+
+</html>
