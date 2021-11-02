@@ -1,16 +1,21 @@
 <html>
 <head>
-<title>Add Person </title>
+<title>Update person </title>
 </head>
 
+ID: {{PersonById.id}} 
+<br>
+OIB: {{PersonById.OIB}}
+
+
 <body>
-<h1> Add Person </h1>
+<h1> Update person </h1>
 <form action="" method="POST">
 {% csrf_token %}
 OIB: <input type="text" maxlength="11" name="OIB"/>
 <br>
 <br>
-<input onclick="myFunction()" type="submit" value="Add"/>
+<input type="submit" value="Add"/>
 
 {% if alert == 1%}
   <p>A person with this OIB already exists. Try again.</p>
@@ -20,14 +25,8 @@ OIB: <input type="text" maxlength="11" name="OIB"/>
 
 <br>
 <br>
-<a href="../../eqview">Go back.</a>
+<a href="../../../eqview">Go back.</a>
 
-
-<script>
-function myFunction() {
-  //alert("Added!");
-}
-</script>
 
 
 

@@ -2,7 +2,6 @@
 <head>
 <title>Add Equipment </title>
 </head>
-{{people_list}}
 <body>
 <h1> Add Equipment </h1>
 <form action="" method="POST">
@@ -20,6 +19,11 @@ Serial number: <input type="text" maxlength="20" name="serialNum"/>
 <br>
 <br>
 <input onclick="myFunction()" type="submit" value="Add"/>
+
+{% if alert == 1%}
+  <p>This serial number is already in use! Try again.</p>
+{% endif %}
+
 </form>
 
 
@@ -28,12 +32,9 @@ Serial number: <input type="text" maxlength="20" name="serialNum"/>
 <a href="../../eqview">Go back.</a>
 
 
-
-
-
 <script>
 function myFunction() {
-  alert("Added!");
+  //alert("Added!");
 }
 </script>
 

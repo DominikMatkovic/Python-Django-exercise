@@ -7,7 +7,8 @@
     {% for equipment in eq_list %}
         <tr>
             <th><a href="/eqview/{{ equipment.id }}/">ID: {{ equipment.id }} , {{equipment.serialNum}}</a><th>
-            <th><a href="">DELETE</a></th>
+            <th><a href="/eqview/deleteEquipment/{{ equipment.id }}/" onclick="return confirm('Are you sure?')">DELETE</a></th>
+            <th><a href="/eqview/updateEquipmentForm/{{ equipment.id }}/">UPDATE</a></th>
         </tr>
     {% endfor %}
     </table>
@@ -22,7 +23,8 @@
     {% for person in people_list %}
         <tr> 
             <th><a href="/eqview/people/{{ person.id }}/">ID: {{ person.id }} , {{person.OIB}}</a></th>
-            <th><a href="">DELETE</a></th>
+            <th><a href="/eqview/deletePerson/{{ person.id }}/" onclick="return confirm('Are you sure?')" >DELETE</a></th>
+            <th><a href="/eqview/updatePersonForm/{{ person.id }}/">UPDATE</a></th>
         </tr>      
     {% endfor %}
     </table>
@@ -34,4 +36,3 @@
 <a href="/eqview/addPersonForm">Add person.</a>
 <br>
 <a href="/eqview/addEquipmentForm">Add equipment.</a>
-

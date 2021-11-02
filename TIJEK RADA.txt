@@ -5,33 +5,48 @@ https://github.com/DominikMatkovic
 koristi se ovaj tutorial 
 "https://docs.djangoproject.com/en/3.2/intro/tutorial01/"
 
-2. Python Django i baza podataka 
+ Python Django i baza podataka 
 https://docs.djangoproject.com/en/3.2/intro/tutorial02/ 
 https://docs.djangoproject.com/en/3.2/intro/tutorial03/
 dodan git, i napravljen prvi commit
 
-3. Forme
+ Forme
 https://docs.djangoproject.com/en/3.2/intro/tutorial04/
 
-4. css
+ css
 https://docs.djangoproject.com/en/3.2/intro/tutorial06/
 
-5. Pravljenje baze s korisnicima i opremom.
+2. Pravljenje baze s korisnicima i opremom.
 
 https://www.w3schools.com/html/ za html
-
-http://www.learningaboutelectronics.com/Articles/How-to-insert-data-into-a-database-from-an-HTML-form-in-Django.php
-jednostavni form
 
 Omoguceno dodavanje korisnika i opreme.
 opremi se pri dodavanju moze pridrizuti osoba. (29.10.2021.)
 
+http://www.learningaboutelectronics.com/Articles/How-to-insert-data-into-a-database-from-an-HTML-form-in-Django.php
+jednostavni form
+
 Sada cu dodati brisanje osoba ili opreme 
 te promjenjivanje osoba i opreme
 
-Mislim da bi 5. korak trebao biti gotov do 5.11.2021.
+https://docs.djangoproject.com/en/dev/topics/db/queries/
+dohvacanje iz baze (queries)
+https://stackoverflow.com/questions/10462839/how-to-display-a-confirmation-dialog-when-clicking-an-a-link
+javascript confirmation
+https://stackoverflow.com/questions/3805958/how-to-delete-a-record-in-django-models
+delete
+
+delete-anje stavki napravljeno (2.11.2021.)
+
+https://stackoverflow.com/questions/32848472/better-option-to-check-if-a-particular-instance-exists-django
+dodano addperson formi provjeravanje unikatnosti unosa (2.11.2021.)
 
 
 
+
+Mislim da bi 2. korak trebao biti gotov do 5.11.2021.
+
+
+TODO: raditi s bazom preko API-a
 
 
