@@ -11,5 +11,6 @@ urlpatterns = [
     path('addPersonForm/', views.addPersonForm, name='addPersonForm'),
     path('addEquipmentForm/', views.addEquipmentForm, name='addEquipmentForm'),
     path('updatePersonForm/<int:id>/', views.updatePersonForm, name='updatePersonForm'),
+    path('updateEquipmentForm/<int:id>/', views.updateEquipmentForm, name='updateEquipmentForm'),
 
 ]

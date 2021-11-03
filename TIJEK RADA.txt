@@ -41,12 +41,19 @@ delete-anje stavki napravljeno (2.11.2021.)
 https://stackoverflow.com/questions/32848472/better-option-to-check-if-a-particular-instance-exists-django
 dodano addperson formi provjeravanje unikatnosti unosa (2.11.2021.)
 
+dodan update (3.11.2021.)
+
+
 
 
 
 Mislim da bi 2. korak trebao biti gotov do 5.11.2021.
 
 
-TODO: raditi s bazom preko API-a
+TODO: 
+    raditi s bazom preko API-a
+    provjeriti ima li nesto ko bootstrap za django
+    voditi brigu o vise vrsta preglednika
+    treba li imati za svaki model CRUD ili neki generic
 
 

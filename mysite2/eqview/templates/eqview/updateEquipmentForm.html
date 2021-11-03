@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Update equipment </title>
+</head>
+
+ID: {{EquipmentById.id}} 
+<br>
+Serial number: {{EquipmentById.serialNum}}
+<br>
+{% if EquipmentById.borrowedBy == null %}
+Nobody
+{% else %}
+Borrowed by: {{EquipmentById.borrowedBy}}
+{% endif %}
+
+<body>
+<h1> Update equipment </h1>
+<form action="" method="POST">
+{% csrf_token %}
+Serial number: <input type="text" maxlength="20" name="serialNum"/>
+<br>
+<br>
+<label for="OIB">Choose a person by OIB:</label>
+  <select name="OIB" id="OIB">
+    <option value= "None"> Nobody </option>   
+    {% for person in people_list %}
+        <option value= "{{person.OIB}}"> {{person.OIB}} </option>   
+    {% endfor %}
+  </select>
+<br>
+<input type="submit" value="Update"/>
+
+{% if alert == 1%}
+  <p>Equipment with this serial number already exists. Try again.</p>
+{% endif %}
+
+</form>
+
+<br>
+<br>
+<a href="../../../eqview">Go back.</a>
+
+
+
+
+</body>
+
+</html>

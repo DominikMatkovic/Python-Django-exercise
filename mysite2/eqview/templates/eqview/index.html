@@ -1,3 +1,10 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'eqview/style.css' %}">
+
+<html>
+<body>
+
 <h1>List of all company equipment and employees</h1>
 
 {{ eq_list}}
@@ -6,7 +13,10 @@
     <table>
     {% for equipment in eq_list %}
         <tr>
-            <th><a href="/eqview/{{ equipment.id }}/">ID: {{ equipment.id }} , {{equipment.serialNum}}</a><th>
+            <th><a href="/eqview/{{ equipment.id }}/">
+            ID: {{ equipment.id }} , {{equipment.serialNum}} , 
+            Borrowed by: {{ equipment.borrowedBy }}
+            </a><th>         
             <th><a href="/eqview/deleteEquipment/{{ equipment.id }}/" onclick="return confirm('Are you sure?')">DELETE</a></th>
             <th><a href="/eqview/updateEquipmentForm/{{ equipment.id }}/">UPDATE</a></th>
         </tr>
@@ -36,3 +46,6 @@
 <a href="/eqview/addPersonForm">Add person.</a>
 <br>
 <a href="/eqview/addEquipmentForm">Add equipment.</a>
+
+</body>
+</html>
