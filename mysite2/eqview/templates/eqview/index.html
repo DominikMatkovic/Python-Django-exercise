@@ -1,51 +1,83 @@
-{% load static %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'eqview/style.css' %}">
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <body>
 
-<h1>List of all company equipment and employees</h1>
+{% load static%}
 
-{{ eq_list}}
-
-{% if eq_list %}
-    <table>
-    {% for equipment in eq_list %}
-        <tr>
-            <th><a href="/eqview/{{ equipment.id }}/">
-            ID: {{ equipment.id }} , {{equipment.serialNum}} , 
-            Borrowed by: {{ equipment.borrowedBy }}
-            </a><th>         
-            <th><a href="/eqview/deleteEquipment/{{ equipment.id }}/" onclick="return confirm('Are you sure?')">DELETE</a></th>
-            <th><a href="/eqview/updateEquipmentForm/{{ equipment.id }}/">UPDATE</a></th>
-        </tr>
-    {% endfor %}
-    </table>
-{% else %}
-    <p>We have no equipment.</p>
-{% endif %}
-
-{{ people_list}}
-
-{% if people_list %}
-    <table>
-    {% for person in people_list %}
-        <tr> 
-            <th><a href="/eqview/people/{{ person.id }}/">ID: {{ person.id }} , {{person.OIB}}</a></th>
-            <th><a href="/eqview/deletePerson/{{ person.id }}/" onclick="return confirm('Are you sure?')" >DELETE</a></th>
-            <th><a href="/eqview/updatePersonForm/{{ person.id }}/">UPDATE</a></th>
-        </tr>      
-    {% endfor %}
-    </table>
-{% else %}
-    <p>We have no employees.</p>
-{% endif %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 
 
-<a href="/eqview/addPersonForm">Add person.</a>
-<br>
-<a href="/eqview/addEquipmentForm">Add equipment.</a>
+{# Load the tag library #}
+
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
+<div class="container-fluid mt-3">
+
+    <h1>List of all company equipment:</h1>
+    {% if eq_list %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Serial number</th>
+                    <th>Borrowed by</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        {% for equipment in eq_list %}      
+                <tr>             
+                    <th>{{ equipment.id }}</th> 
+                    <th>{{equipment.serialNum}} </th> 
+                    <th>{{ equipment.borrowedBy }}</th> 
+                    <th><a href="/eqview/{{ equipment.id }}/">DETAILS</a>         
+                    <a href="/eqview/deleteEquipment/{{ equipment.id }}/" onclick="return confirm('Are you sure?')">DELETE</a>
+                    <a href="/eqview/updateEquipmentForm/{{ equipment.id }}/">UPDATE</a></th>
+                </tr>        
+        {% endfor %}        
+        </table>
+    {% else %}
+        <p>We have no equipment.</p>
+    {% endif %}
+
+
+    <h1>List of all company employees:</h1>
+    {% if people_list %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>OIB</th>
+                    <th>Actions</th>
+                </tr> 
+            </thead> 
+        {% for person in people_list %}        
+                <tr> 
+                    <th>{{person.id }}</th>
+                    <th>{{person.OIB}}</th>
+                    <th><a href="/eqview/people/{{ person.id }}/">DETAILS</a>
+                    <a href="/eqview/deletePerson/{{ person.id }}/" onclick="return confirm('Are you sure?')" >DELETE</a>
+                    <a href="/eqview/updatePersonForm/{{ person.id }}/">UPDATE</a></th>
+                </tr>            
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>We have no employees.</p>
+    {% endif %}
+
+
+
+<a href="/eqview/addEquipmentForm" class=" btn btn-primary btn-lg " tabindex="-1" role="button" aria-disabled="true">Add Equipment</a>
+<a href="/eqview/addPersonForm" class="btn btn-primary btn-lg " tabindex="-1" role="button" aria-disabled="true">Add Employees</a>
+</div>
+
 
 </body>
 </html>
