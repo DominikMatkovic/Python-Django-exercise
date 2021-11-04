@@ -80,6 +80,14 @@ def updatePersonForm(request,id):
     return render(request,'eqview/updatePersonForm.html',context) 
 
 def updateEquipmentForm(request,id):
+
+    def setOib():
+        if request.POST.get('OIB') != "None":
+            EquipmentById.borrowedBy = Person.objects.get(OIB = request.POST.get('OIB'))
+        else:
+            EquipmentById.borrowedBy = None
+        EquipmentById.save()   
+
     people_list  = Person.objects.all()
     EquipmentById = Equipment.objects.get(pk = id)
     context = {'EquipmentById': EquipmentById,'people_list': people_list }
@@ -93,16 +101,8 @@ def updateEquipmentForm(request,id):
             
             EquipmentById.serialNum = request.POST.get('serialNum')
 
-            if request.POST.get('OIB') != "None":
-                EquipmentById.borrowedBy = Person.objects.get(OIB = request.POST.get('OIB'))
-            else:
-                EquipmentById.borrowedBy = None
-            EquipmentById.save()
+            setOib()
         else:
-            if request.POST.get('OIB') != "None":
-                EquipmentById.borrowedBy = Person.objects.get(OIB = request.POST.get('OIB'))
-            else:
-                EquipmentById.borrowedBy = None
-            EquipmentById.save()
+            setOib()
 
     return render(request,'eqview/updateEquipmentForm.html',context) 

@@ -1,36 +1,35 @@
-<html>
-<head>
-<title>Add Person </title>
-</head>
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Add person</title>
+</head>
 <body>
-<h1> Add Person </h1>
-<form action="" method="POST">
-{% csrf_token %}
-OIB: <input type="text" maxlength="11" name="OIB"/>
-<br>
-<br>
-<input onclick="myFunction()" type="submit" value="Add"/>
+
+<div class="container mt-3">
+  <h2>Add person</h2>
+  <form action="" method="POST">
+  {% csrf_token %}
+    <div class="mb-3 mt-3">
+      <label for="OIB">OIB:</label>
+      <input type="text" placeholder="Write OIB here." class="form-control" maxlength="11" id="OIB" name="OIB"/>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-outline-secondary">Update</button>
+    <a href="../../eqview/" class="btn btn-outline-secondary" tabindex="-1" role="button" aria-disabled="true">Go back</a>
+
+  </form>
+</div>
 
 {% if alert == 1%}
-  <p>A person with this OIB already exists. Try again.</p>
+<script>
+  alert("A person with this OIB already exists! Try again.");
+</script>
 {% endif %}
 
-</form>
-
-<br>
-<br>
-<a href="../../eqview">Go back.</a>
-
-
-<script>
-function myFunction() {
-  //alert("Added!");
-}
-</script>
-
-
-
 </body>
-
 </html>

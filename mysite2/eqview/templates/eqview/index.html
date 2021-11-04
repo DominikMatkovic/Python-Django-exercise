@@ -2,22 +2,10 @@
 <html lang="en">
 <body>
 
-{% load static%}
-
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-
-
-{# Load the tag library #}
-
 {% load bootstrap5 %}
-
-{# Load CSS and JavaScript #}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
-
-{# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
-
 
 <div class="container-fluid mt-3">
 
@@ -37,9 +25,9 @@
                     <th>{{ equipment.id }}</th> 
                     <th>{{equipment.serialNum}} </th> 
                     <th>{{ equipment.borrowedBy }}</th> 
-                    <th><a href="/eqview/{{ equipment.id }}/">DETAILS</a>         
-                    <a href="/eqview/deleteEquipment/{{ equipment.id }}/" onclick="return confirm('Are you sure?')">DELETE</a>
-                    <a href="/eqview/updateEquipmentForm/{{ equipment.id }}/">UPDATE</a></th>
+                    <th><a class="btn btn-outline-secondary btn-sm" href="/eqview/{{ equipment.id }}/">DETAILS</a>         
+                    <a class="btn btn-outline-secondary btn-sm" href="/eqview/deleteEquipment/{{ equipment.id }}/" onclick="return confirm('Are you sure?')">DELETE</a>
+                    <a class="btn btn-outline-secondary btn-sm" href="/eqview/updateEquipmentForm/{{ equipment.id }}/">UPDATE</a></th>
                 </tr>        
         {% endfor %}        
         </table>
@@ -62,9 +50,9 @@
                 <tr> 
                     <th>{{person.id }}</th>
                     <th>{{person.OIB}}</th>
-                    <th><a href="/eqview/people/{{ person.id }}/">DETAILS</a>
-                    <a href="/eqview/deletePerson/{{ person.id }}/" onclick="return confirm('Are you sure?')" >DELETE</a>
-                    <a href="/eqview/updatePersonForm/{{ person.id }}/">UPDATE</a></th>
+                    <th><a class="btn btn-outline-secondary btn-sm" href="/eqview/people/{{ person.id }}/">DETAILS</a>
+                    <a class="btn btn-outline-secondary btn-sm" href="/eqview/deletePerson/{{ person.id }}/" onclick="return confirm('Are you sure?')" >DELETE</a>
+                    <a class="btn btn-outline-secondary btn-sm" href="/eqview/updatePersonForm/{{ person.id }}/">UPDATE</a></th>
                 </tr>            
         {% endfor %}
         </table>
@@ -74,8 +62,8 @@
 
 
 
-<a href="/eqview/addEquipmentForm" class=" btn btn-primary btn-lg " tabindex="-1" role="button" aria-disabled="true">Add Equipment</a>
-<a href="/eqview/addPersonForm" class="btn btn-primary btn-lg " tabindex="-1" role="button" aria-disabled="true">Add Employees</a>
+<a href="/eqview/addEquipmentForm" class=" btn btn-outline-secondary btn-lg" tabindex="-1" role="button" aria-disabled="true">Add Equipment</a>
+<a href="/eqview/addPersonForm" class="btn btn-outline-secondary btn-lg" tabindex="-1" role="button" aria-disabled="true">Add Employees</a>
 </div>
 
 

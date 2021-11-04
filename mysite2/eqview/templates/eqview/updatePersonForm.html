@@ -1,35 +1,41 @@
-<html>
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Update person </title>
 </head>
-
-ID: {{PersonById.id}} 
-<br>
-OIB: {{PersonById.OIB}}
-
-
 <body>
-<h1> Update person </h1>
-<form action="" method="POST">
-{% csrf_token %}
-OIB: <input type="text" maxlength="11" name="OIB"/>
-<br>
-<br>
-<input type="submit" value="Update"/>
+
+<div class="container mt-3">
+  <h2>Update equipment</h2>
+  <form action="" method="POST">
+  {% csrf_token %}
+    <div class="mb-3 mt-3">
+      <label for="OIB">OIB:</label>
+      <input type="text" placeholder="Write OIB here." class="form-control" maxlength="11" id="OIB" name="OIB"/>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-outline-secondary">Update</button>
+  </form>
+</div>
+
+
+<div class="container p-5 my-5 border">
+    <p>ID: {{PersonById.id}}</p>
+    <p>OIB: {{PersonById.OIB}}</p>
+    <br></br>
+    <a href="../../../eqview/" class="btn btn-outline-secondary btn-sm " tabindex="-1" role="button" aria-disabled="true">Go back</a>
+</div>
 
 {% if alert == 1%}
-  <p>A person with this OIB already exists. Try again.</p>
+<script>
+  alert("A person with this OIB already exists! Try again.");
+</script>
 {% endif %}
 
-</form>
-
-<br>
-<br>
-<a href="../../../eqview">Go back.</a>
-
-
-
-
 </body>
-
 </html>

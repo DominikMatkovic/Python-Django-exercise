@@ -1,45 +1,45 @@
-<html>
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Add Equipment </title>
+<title>Add equipment </title>
 </head>
 <body>
-<h1> Add Equipment </h1>
-<form action="" method="POST">
-{% csrf_token %}
-Serial number: <input type="text" maxlength="20" name="serialNum"/>
-<br>
-<br>
-<label for="OIB">Choose a person by OIB:</label>
-  <select name="OIB" id="OIB">
-    <option value= "None"> Nobody </option>   
-    {% for person in people_list %}
+
+<div class="container mt-3">
+  <h2>Add equipment</h2>
+  <form action="" method="POST">
+  {% csrf_token %}
+    <div class="mb-3 mt-3">
+      <label for="serialNum">Serial number:</label>
+      <input type="text" placeholder="Write serial number here." class="form-control" maxlength="20" id="serialNum" name="serialNum"/>
+    </div>
+
+    <label for="OIB">Choose a person by OIB:</label>
+    <select class="form-select" name="OIB" id="OIB">
+      <option value= "None"> Nobody </option>   
+      {% for person in people_list %}
         <option value= "{{person.OIB}}"> {{person.OIB}} </option>   
-    {% endfor %}
-  </select>
-<br>
-<br>
-<input onclick="myFunction()" type="submit" value="Add"/>
+      {% endfor %}
+    </select>
+
+    <br>
+
+    <button type="submit" class="btn btn-outline-secondary">Update</button>
+    <a href="../../eqview/" class="btn btn-outline-secondary " tabindex="-1" role="button" aria-disabled="true">Go back</a>
+  </form>
+</div>
 
 {% if alert == 1%}
-  <p>This serial number is already in use! Try again.</p>
+<script>
+alert("Equipment with this serial number already exists! Try again.");
+</script>
 {% endif %}
 
-</form>
-
-
-<br>
-<br>
-<a href="../../eqview">Go back.</a>
-
-
-<script>
-function myFunction() {
-  //alert("Added!");
-}
-</script>
-
-
-
 </body>
-
 </html>
+
