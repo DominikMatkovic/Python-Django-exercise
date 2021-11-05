@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+<div class="container-fluid mt-3">
+
+    <h1>List of all company equipment:</h1>
+    {% if eq_list %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Serial number</th>
+                    <th>Borrowed by</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        {% for equipment in eq_list %}      
+                <tr>             
+                    <th>{{ equipment.id }}</th> 
+                    <th>{{equipment.serialNum}} </th> 
+                    <th>{{ equipment.borrowedBy }}</th> 
+                    <th><a class="btn btn-outline-secondary btn-sm" href="/eqview/{{ equipment.id }}/">DETAILS</a>         
+                    <a class="btn btn-outline-secondary btn-sm" href="/eqview/deleteEquipment/{{ equipment.id }}/" onclick="return confirm('Are you sure?')">DELETE</a>
+                    <a class="btn btn-outline-secondary btn-sm" href="/eqview/updateEquipmentForm/{{ equipment.id }}/">UPDATE</a></th>
+                </tr>        
+        {% endfor %}        
+        </table>
+    {% else %}
+        <p>We have no equipment.</p>
+    {% endif %}
+
+
+    <h1>List of all company employees:</h1>
+    {% if people_list %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>OIB</th>
+                    <th>Actions</th>
+                </tr> 
+            </thead> 
+        {% for person in people_list %}        
+                <tr> 
+                    <th>{{person.id }}</th>
+                    <th>{{person.OIB}}</th>
+                    <th><a class="btn btn-outline-secondary btn-sm" href="/eqview/people/{{ person.id }}/">DETAILS</a>
+                    <a class="btn btn-outline-secondary btn-sm" href="/eqview/deletePerson/{{ person.id }}/" onclick="return confirm('Are you sure?')" >DELETE</a>
+                    <a class="btn btn-outline-secondary btn-sm" href="/eqview/updatePersonForm/{{ person.id }}/">UPDATE</a></th>
+                </tr>            
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>We have no employees.</p>
+    {% endif %}
+
+
+
+<a href="/eqview/addEquipmentForm" class=" btn btn-outline-secondary btn-lg" tabindex="-1" role="button" aria-disabled="true">Add Equipment</a>
+<a href="/eqview/addPersonForm" class="btn btn-outline-secondary btn-lg" tabindex="-1" role="button" aria-disabled="true">Add Employees</a>
+</div>
+
+
+</body>
+</html>

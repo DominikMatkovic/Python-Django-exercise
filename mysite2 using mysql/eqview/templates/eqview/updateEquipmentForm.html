@@ -1,0 +1,56 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Update equipment </title>
+</head>
+<body>
+
+<div class="container mt-3">
+  <h2>Update equipment</h2>
+  <form action="" method="POST">
+  {% csrf_token %}
+    <div class="mb-3 mt-3">
+      <label for="serialNum">Serial number:</label>
+      <input type="text" placeholder="Write serial number here." class="form-control" maxlength="20" id="serialNum" name="serialNum"/>
+    </div>
+
+    <label for="OIB">Choose a person by OIB:</label>
+    <select class="form-select" name="OIB" id="OIB">
+      <option value= "None"> Nobody </option>   
+      {% for person in people_list %}
+        <option value= "{{person.OIB}}"> {{person.OIB}} </option>   
+      {% endfor %}
+    </select>
+
+    <br>
+
+    <button type="submit" class="btn btn-outline-secondary">Update</button>
+  </form>
+</div>
+
+
+<div class="container p-5 my-5 border">
+    <p>ID: {{EquipmentById.id}}</p>
+    <p>Serial number: {{EquipmentById.serialNum}}</p>
+    {% if EquipmentById.borrowedBy == null %}
+    <p>Borrowed by: Nobody</p>
+    {% else %}
+    <p>Borrowed by: {{EquipmentById.borrowedBy}}</p>
+    {% endif %}
+    <br></br>
+    <a href="../../../eqview/" class="btn btn-outline-secondary btn-sm " tabindex="-1" role="button" aria-disabled="true">Go back</a>
+</div>
+
+{% if alert == 1%}
+<script>
+alert("Equipment with this serial number already exists! Try again.");
+</script>
+{% endif %}
+
+</body>
+</html>

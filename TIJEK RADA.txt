@@ -9,16 +9,13 @@ https://github.com/DominikMatkovic
 
 koristi se ovaj tutorial 
 "https://docs.djangoproject.com/en/3.2/intro/tutorial01/"
-
- Python Django i baza podataka 
+    Python Django i baza podataka 
 https://docs.djangoproject.com/en/3.2/intro/tutorial02/ 
 https://docs.djangoproject.com/en/3.2/intro/tutorial03/
 dodan git, i napravljen prvi commit
-
- Forme
+    Forme
 https://docs.djangoproject.com/en/3.2/intro/tutorial04/
-
- css
+    css
 https://docs.djangoproject.com/en/3.2/intro/tutorial06/
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -58,17 +55,29 @@ Mislim da bi 2. korak trebao biti gotov do (5.11.2021.)
 https://data-flair.training/blogs/django-bootstrap/
 https://django-bootstrap-v5.readthedocs.io/en/latest/installation.html
 https://www.w3schools.com/bootstrap5/
+gotovo(4.11.2021.)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 4. MySQL baza, napraviti i koristiti s trenutnom applikacijom (s xampp)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+installiran xampp
+https://www.youtube.com/watch?v=ImqxBiv5yIY (mysql baza)
+uvijek se mora maknuti VISIBLE u sql-u kada se kreira table. bug?
+https://medium.com/@omaraamir19966/connect-django-with-mysql-database-f946d0f6f9e3
+povezano s mysql bazom (5.11.2021.)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+5. Napraviti novu stranicu/bazu/aplikaciju, 
+    nesto plansko napravljeno npr e-dnevnik sa profesorima i ucenicima
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+mislim da ce biti gotovo do 12.11.2021.
+
+
 
 
 
 TODO:
-    Napraviti novu stranicu/bazu/aplikaciju, 
-        nesto plansko napravljeno npr e-dnevnik sa profesorima i ucenicima
     raditi s bazom preko API-a
     CSS framework za django
         boostrap <--
