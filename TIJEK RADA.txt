@@ -74,8 +74,63 @@ povezano s mysql bazom (5.11.2021.)
 mislim da ce biti gotovo do 12.11.2021.
 
 
+Modeli
+Professor, Student, School, Subject, studentSubjectTable
+
+School,
+	VARCHAR(30)	PRIMARY KEY NOT NULL name
+	VARCHAR(30)	adress
+	VARCHAR(30) phoneNumber
+
+Professor, 
+	VARCHAR(11) PRIMARY KEY NOT NULL professorOIB
+	VARCHAR(30)	firstName
+	VARCHAR(30)	lastName
+	VARCHAR(30)	email
+	VARCHAR(30)	homeAdress
+	VARCHAR(30) phoneNumber
+	VARCHAR(30) FOREIGN KEY worksAtFKSchoolName
+	DATE		birthDate
+
+Student, 
+	VARCHAR(11) PRIMARY KEY NOT NULL studentOIB
+	VARCHAR(30) firstName
+	VARCHAR(30) lastName
+	VARCHAR(30) email
+	VARCHAR(30) homeAdress
+	VARCHAR(30) phoneNumber
+	VARCHAR(30) FOREIGN KEY attendsFKSchoolName
+	DATE		birthDate
+
+Subject,
+	INT		PRIMARY KEY NOT NULL id
+	VARCHAR(30)	    name
+	VARCHAR(1000)   description
+	VARCHAR(11)	    FOREIGN KEY taughtByFKProfessorOIB
+	VARCHAR(30)	    FOREIGN KEY taughtAtFKSchoolName
+
+studentSubjectTable,
+	INT 		    PRIMARY KEY NOT NULL id
+	VARCHAR(30) 	FOREIGN KEY FKSubjectName
+	VARCHAR(30) 	FOREIGN KEY FKStudentOIB
+	
+https://www.youtube.com/watch?v=CkYvpKZyEqI
+python manage.py inspectdb > models.py  
+importanje mysql modela u models.py
 
 
+eDnevnik pauziran dok naucim postman za api-je
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+6. Postman API JSON
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+15.11 počeo
+radit cu komunikaciju s kopicevom bazom preko API-a ovaj tjedan
+
+
+https://www.codegrepper.com/code-examples/python/how+to+retrieve+data+from+data.json+url+in+django
 
 TODO:
     raditi s bazom preko API-a

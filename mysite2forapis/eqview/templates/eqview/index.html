@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+            {% for x in data %}
+            <tr>
+                <td>{{x.name}}</td>
+                <td>{{x.description}}</td>
+            </tr>
+                  
+        
+    
+
+
+
+
+
+{%endfor%}
+    </table>
+
+<br>
+<br>
+<br>
+<br>
+{{data}}
+
+</body>
+</html>
