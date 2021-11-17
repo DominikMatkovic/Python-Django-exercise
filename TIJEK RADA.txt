@@ -123,12 +123,14 @@ eDnevnik pauziran dok naucim postman za api-je
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-6. Postman API JSON
+6. Postman API JSON REST framework
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+https://dzone.com/articles/parsing-unsupported-requests-put-delete-etc-in-dja
 
 15.11 počeo
 radit cu komunikaciju s kopicevom bazom preko API-a ovaj tjedan
-
+https://www.youtube.com/watch?v=1k0fRG098cU
+https://www.django-rest-framework.org/#quickstart
 
 https://www.codegrepper.com/code-examples/python/how+to+retrieve+data+from+data.json+url+in+django
 
