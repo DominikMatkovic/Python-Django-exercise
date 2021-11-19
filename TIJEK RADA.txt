@@ -119,7 +119,7 @@ python manage.py inspectdb > models.py
 importanje mysql modela u models.py
 
 
-eDnevnik pauziran dok naucim postman za api-je
+eDnevnik pauziran dok naucim REST
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -133,14 +133,18 @@ https://www.youtube.com/watch?v=1k0fRG098cU
 https://www.django-rest-framework.org/#quickstart
 
 https://www.codegrepper.com/code-examples/python/how+to+retrieve+data+from+data.json+url+in+django
+https://medium.com/beyond-light-creations/build-a-rest-api-with-django-rest-framework-and-mysql-ddff0c1126ae
+
+22.11. - 26.11. ću raditi s kolegom za baze za ovaj moj eDnevnik projekt
+
+
 
 TODO:
-    raditi s bazom preko API-a
     CSS framework za django
         boostrap <--
         tailwind x
         UIKit x
     voditi brigu o vise vrsta preglednika
-    (prekomplicirano)treba li imati za svaki model CRUD ili nesto generic
+    (prekomplicirano)treba li imati za svaki model CRUD ili nesto generic (postoji u REST frameworku 'mixin' itd...)
 
 

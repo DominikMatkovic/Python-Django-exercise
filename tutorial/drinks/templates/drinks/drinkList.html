@@ -1,0 +1,15 @@
+<html><body>
+<h1>Drinks</h1>
+<ul>
+    {% for drink in drinks %}
+    <li>{{ drink.name }}, {{ drink.description }}</li>
+    {% endfor %}
+</ul>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <button type="submit"> JSON </button>
+</form>
+
+</body></html>
+
